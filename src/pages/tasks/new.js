@@ -15,7 +15,8 @@ const CreateTask = () => {
 
 
   const getTask = async () => {
-    const response = await fetch(`http://localhost:3000/api/tasks/${query.id}`);
+    //corregir const response = await fetch(`http://localhost:3000/api/tasks/${query.id}`);
+    const response = await fetch(`/api/tasks/${query.id}`);
     const data = await response.json();
     setNewTask({ title: data.title, description: data.description });
   };
@@ -52,7 +53,8 @@ const CreateTask = () => {
 
   const updateTask = async () => {
     try {
-      await fetch(`http://localhost:3000/api/tasks/${query.id}`, {
+      //corregir await fetch(`http://localhost:3000/api/tasks/${query.id}`, {
+      await fetch(`/api/tasks/${query.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +68,8 @@ const CreateTask = () => {
 
   const createTask = async () => {
     try {
-      await fetch(" http://localhost:3000/api/tasks", {
+      //corregir await fetch(" http://localhost:3000/api/tasks", {
+      await fetch("/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
