@@ -62,7 +62,7 @@ export default function Home({ tasks = [] }) {
 
 export async function getServerSideProps() {
   //corregir const response = await fetch("http://localhost:3000/api/tasks");
-  const response = await fetch("/api/tasks");
+  const response = await fetch(process.env.NEXT_URL + "/api/tasks");
   const tasks = await response.json();
 
   return {
