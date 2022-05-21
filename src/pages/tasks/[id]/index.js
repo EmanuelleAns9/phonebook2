@@ -68,6 +68,7 @@ const Task = ({ task, error }) => {
 
 export async function getServerSideProps({ query: { id } }) {
   //corregir const res = await fetch(`http://localhost:3000/api/tasks/${id}`);
+  console.log('process.env.NEXT_URL:', process.env.NEXT_URL);
   const res = await fetch(process.env.NEXT_URL + `/api/tasks/${id}`);
   if (res.status === 200) {
     const task = await res.json();
